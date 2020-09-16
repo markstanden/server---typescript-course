@@ -1,0 +1,30 @@
+{
+  "name": "server---typescript-course",
+  "version": "0.1.0",
+  "description": "learning to use express with typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markstanden/server---typescript-course.git"
+  },
+  "keywords": [
+    "typescript",
+    "express",
+    "authentication"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/markstanden/server---typescript-course/issues"
+  },
+  "homepage": "https://github.com/markstanden/server---typescript-course#readme",
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.1.2",
+    "yarn": "^1.22.5"
+  }
+}
