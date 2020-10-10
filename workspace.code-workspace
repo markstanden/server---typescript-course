@@ -1,0 +1,23 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    //autosave
+    "files.autoSave": "afterDelay",
+    // Prettier
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    //Basic Prettier Settings, will be ignored because we're using .prettierrc.json file
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    // ESLint
+    "editor.codeActionsOnSave": {
+      // ESLint
+      "source.fixAll.eslint": true
+    }
+  }
+}
