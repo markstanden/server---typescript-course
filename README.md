@@ -1,7 +1,22 @@
 # server---typescript-course
-Stephen Grider's Express using typescript run through
+### Stephen Grider's Express using typescript run through  
 
-Now with docker devcontainer!  
+#### Why has this small section taken me so long?
+- Had a *brief* run in with docker/podman and now my dev environment is within a container!
+- I have also been learning markdown to produce better readme.md files!
+- I have been playing with Stephen's javascript puzzles at <https://prep-app-prod.herokuapp.com/>
+- I'n now the proud owner/admin of a dell R710 server! Old but gold.
+
+
+#### In this section of the course we have used:
+- more typescript type files
+- express plug ins
+- use of typescript decorators
+- more enums within typescript
+
+---
+
+## To install:
 
 ---
 
@@ -19,15 +34,15 @@ Now with docker devcontainer!
 **To build the dev environment via CLI (even works on a different machine)**
 
 - *the easy way:*
-```
-chmod 755 docker-dev.sh
-sh ./docker-dev.sh
-```
+  ```
+  chmod 755 docker-dev.sh
+  sh ./docker-dev.sh
+  ```
 - *or the slightly harder way:*
   ```
   docker build -t dev-container .
   ```
-- *attaching the $PWD as a volume mapped to /app & remove when finished*
+- *attaching the **$PWD** as a volume mapped to **/app** & remove when finished*
   ```
   docker run -v $PWD/.:/app/.:z -p 3000:3000 --rm dev-
   ```
