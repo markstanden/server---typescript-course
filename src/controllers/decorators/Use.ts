@@ -8,6 +8,9 @@ export function use(middleware: RequestHandler) {
       MetadataKeys.middleware,
       target,
       key
-    );
+    ) || [];
+
+    middlewares.push(middleware);
+    Reflect.defineMetadata(MetadataKeys.middleware, [...middlewares, middleware] , target, key);
   };
 }

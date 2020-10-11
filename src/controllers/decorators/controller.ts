@@ -2,6 +2,7 @@ import { Methods } from './Methods';
 import 'reflect-metadata';
 import { AppRouter } from '../../AppRouter';
 import { MetadataKeys } from './MetadataKeys';
+import { use } from './Use';
 
 export function controller(rootRoute: string) {
   return function (target: Function) {
