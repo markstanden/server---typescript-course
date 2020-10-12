@@ -19,12 +19,13 @@ const router = Router();
 router.post('/login', (request: RequestWithBody, response: Response) => {
   const { email, password } = request.body;
 
+
   if (email && password && email === 'email' && password === 'pass') {
     //mark as signed in
     request.session = { loggedIn: true };
-
     //redirect them to the root route
     response.redirect('/');
+    
   } else {
     response.send('Invalid email or Password');
   }
