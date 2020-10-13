@@ -1,20 +1,11 @@
 import { NextFunction, Request, Response } from 'express';
-import { get, controller, use } from './decorators';
-
-// MIDDLEWARE TO REMOVE
-function logger (req: Request, res: Response, next: NextFunction) {
-  console.log('Request was made')
-  next();
-}
-// *****************************
+import { get, controller, bodyValidator, post } from './decorators';
 
 @controller('/auth')
 class LoginController {
   @get('/login')
-  @use(logger) // REMOVE ME TOO
   getLogin(req: Request, res: Response): void {
-
-    console.log("LoginController");
+    console.log('LoginController');
     res.send(`
     <form method = "POST" >
     <div>
@@ -27,5 +18,26 @@ class LoginController {
     </div>
     <button>Submit</button>
   `);
+  }
+
+  @post('/login')
+  @bodyValidator('email', 'password')
+  postLogin(request: Request, response: Response): void {
+    const { email, password } = request.body;
+
+    if (email && password && email === 'email' && password === 'pass') {
+      //mark as signed in
+      request.session = { loggedIn: true };
+      //redirect them to the root route
+      response.redirect('/');
+    } else {
+      response.send('Invalid email or Password');
+    }
+  }
+
+  @get('/logout')
+  getLogout(req: Request, res: Response): void {
+    req.session = null;
+    res.redirect('/');
   }
 }
